@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/board.css">
+    <link rel="stylesheet" type="text/css" href="css/paging.css">
+   
+</head>
+<body>
+    <div id="container">
+        <div class="menu-container">
+            <div class="contents-counter">총<span class="count-num">10</span>건</div>
+            <div class="upper-menu">
+                <select class="select">
+                    <option>제목</option>
+                </select>
+                <input class="search-input" placeholder="검색어를 입력하세요">
+                <button class="btn-search">검색</button>
+            </div>
+        </div>
+        <div class="table-container">
+            <table class="board-table">
+                <colgroup>
+                    <col width="50px">
+                    <col width="300px">
+                    <col width="150px">
+                    <col width="50px">
+                    <col width="50px">
+                </colgroup>
+                <thead>
+                    <tr class="thead-tr">
+                        <th class="th-number">번호</th>
+                        <th class="th-title">제목</th>
+                        <th class="th-date">날짜</th>
+                        <th class="th-count">조회</th>
+                        <th class="th-file">첨부</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   
+                </tbody>
+            </table>
+        </div>
+        <div class="button-container">
+            <div class="btn-contents">
+                <button id="btn-update">수정</button>
+                <button id="btn-delete">삭제</button>
+            </div>
+            <div class="btn-movepage">
+                <button id="btn-list">목록으로</button>
+                <button id="btn-write">글쓰기</button>
+            </div>
+        </div>
+        <div class="paging-container">
+            <ul class="paging">
+                <li><a href="#" class="firstPage">&laquo;</a></li>
+                <li><a href="#" class="prev">&lt;</a></li>
+                <li><a href="#" class="pageNum">11</a></li>
+                <li><a href="#" class="pageNum">12</a></li>
+                <li><a href="#" class="pageNum">13</a></li>
+                <li><a href="#" class="pageNum">14</a></li>
+                <li><a href="#" class="pageNum">15</a></li>
+                <li><a href="#" class="pageNum">16</a></li>
+                <li><a href="#" class="pageNum">17</a></li>
+                <li><a href="#" class="pageNum">18</a></li>
+                <li><a href="#" class="pageNum">19</a></li>
+                <li><a href="#" class="pageNum">20</a></li>
+                <li><a href="#" class="pageNum">&gt;</a></li>
+                <li><a href="#" class="lastPage">&raquo;</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    let xhttp = new XMLHttpRequest();
+    
+    xhttp.onreadystatechange = function(){
+        if(xhttp.readyState == 4 && xhttp.status == 200){
+            jsonFunction(xhttp.responseText);
+        }
+    }
+    xhttp.open("GET", "json/contents.json", true);
+    xhttp.send();
+
+    function jsonFunction(resp){
+        let dataArr = JSON.parse(resp);
+        let text = "";
+
+        for (i=0; i<dataArr.length; i++){
+            let boardNum = dataArr[i].boardNum;
+            let title = dataArr[i].title;
+            let writeDate = dataArr[i].writeDate;
+            let count = dataArr[i].count;
+            let fileStatus = dataArr[i].fileStatus;
+
+            let addBoardNum = document.createTextNode(boardNum);
+            let addTitle = document.createTextNode(title);
+            let addWirteDate = document.createTextNode(writeDate);
+            let addCount = document.createTextNode(count);
+            let addFileStatus = document.createTextNode(fileStatus);
+
+            let tr = document.createElement("tr");
+            let td1= document.createElement("td");
+            td1.className = 'board-number';
+            let td2 = document.createElement("td");
+            td2.className = 'board-title';
+            let td3 = document.createElement("td");
+            td3.className = 'board-date';
+            let td4 = document.createElement("td");
+            td4.className = 'board-count';
+            let td5 = document.createElement("td");
+            td5.className = 'board-file';
+
+            td1.appendChild(addBoardNum);
+            td2.appendChild(addTitle);
+            td3.appendChild(addWirteDate);
+            td4.appendChild(addCount);
+            td5.appendChild(addFileStatus);
+
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+            tr.appendChild(td4);
+            tr.appendChild(td5);
+
+            let tbody = document.getElementsByTagName("tbody")[0];
+
+            tbody.appendChild(tr);
+        }
+    }
+  
+
+   
+</script>
+</html>

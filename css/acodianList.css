@@ -1,0 +1,238 @@
+*{
+    margin: 0;
+    padding: 0;
+    /*box-sizing: border-box;*/
+    }
+    .container{
+        width: 100%;
+    }
+   @media screen and (min-width:1024px) {
+        .question{
+            padding: 3% 0 3% 2%;
+            width: 100%;
+            position: relative;
+            cursor: pointer;
+            border-top: 1px solid lightgray;
+            border-bottom: 1px solid lightgray;
+            font-weight: bold;
+            display: flex;
+        }
+        .arrow-container{
+            width: 5%;
+            position: absolute;
+            right: 5%;
+        }
+        .contents{
+            width: 85%;
+            text-indent: 3%;
+            line-height: 1.5em;
+        }
+        .question-title{
+            text-indent: 2em;
+        }
+        .open{
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            border: 3px solid lightgray;
+            text-align: center;
+            line-height: 1em;
+            color: lightgray;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .close{
+            display: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            border: 3px solid lightgray;
+            text-align: center;
+            line-height: 1.1em;
+            color: lightgray;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .answer{
+            display: none;
+            background-color: rgb(238, 225, 227);
+            padding: 2% 5% 2% 5%;
+        }
+        .Q{
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: rgb(102, 236, 191);
+            color: white;
+            text-align: center;
+            line-height: 25px;
+            font-size: large;
+            font-weight: bold;
+        }
+        .A{
+            margin-bottom: 10px;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: rgb(222, 154, 165);
+            color: white;
+            text-align: center;
+            line-height: 25px;
+            font-size: large;
+            font-weight: bold;
+        }
+    }
+    @media screen and (min-width:768px) and (max-width:1023px) {
+        .question{
+            padding: 3% 0 3% 2%;
+            width: 100%;
+            position: relative;
+            cursor: pointer;
+            border-top: 1px solid lightgray;
+            border-bottom: 1px solid lightgray;
+            font-weight: bold;
+            display: flex;
+        }
+        .arrow-container{
+            width: 5%;
+            position: absolute;
+            right: 5%;
+            
+        }
+        .contents{
+            width: 85%;
+            height: 10%;
+            
+        }
+        .question-title{
+            text-indent: 2em;
+        }
+        .open{
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            border: 3px solid lightgray;
+            text-align: center;
+            line-height: 1em;
+            color: lightgray;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .close{
+            display: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            border: 3px solid lightgray;
+            text-align: center;
+            line-height: 1.1em;
+            color: lightgray;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .answer{
+            display: none;
+            background-color: rgb(238, 225, 227);
+            padding: 2% 5% 2% 5%;
+        }
+        .Q{
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: rgb(102, 236, 191);
+            color: white;
+            text-align: center;
+            font-size: large;
+            font-weight: bold;
+        }
+        .A{
+            margin-bottom: 10px;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: rgb(222, 154, 165);
+            color: white;
+            text-align: center;
+            font-size: large;
+            font-weight: bold;
+        }
+    }
+    @media screen and (max-width:767px) {
+        .container{
+            width: 100%;
+            min-width: 560px;
+        }
+        .question{
+            padding: 3% 0 3% 2%;
+            width: 100%;
+            position: relative;
+            border-top: 1px solid lightgray;
+            border-bottom: 1px solid lightgray;
+            font-weight: bold;
+            display: flex;
+        }
+        .arrow-container{
+            width: 5%;
+            position: absolute;
+            right: 50px;
+        }
+        .contents{
+            width: 85%;
+            height: 10%;
+        }
+        .question-title{
+            text-indent: 2em;
+        }
+        .open{
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            border: 3px solid lightgray;
+            text-align: center;
+            line-height: 1em;
+            color: lightgray;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .close{
+            display: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            border: 3px solid lightgray;
+            text-align: center;
+            line-height: 1.2em;
+            color: lightgray;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .answer{
+            display: none;
+            background-color: rgb(238, 225, 227);
+            padding: 2% 5% 2% 5%;
+        }
+        .Q{
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: rgb(102, 236, 191);
+            color: white;
+            text-align: center;
+            font-size: large;
+            font-weight: bold;
+        }
+        .A{
+            margin-bottom: 10px;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: rgb(222, 154, 165);
+            color: white;
+            text-align: center;
+            font-size: large;
+            font-weight: bold;
+        }
+    }

@@ -1,0 +1,145 @@
+#container {
+    width: 100%;
+    margin-top: 20px;
+    min-width: 950px;
+    position: relative;
+}
+.menu-container{
+   width: 100%;
+   display: flex;
+   position: relative;
+   height: 30px;
+}
+.upper-menu{
+    display:flex;    
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    height: 100%;
+}
+.contents-counter{
+    margin-bottom: 10px;
+}
+.count-num{
+    color: blue;
+    font-weight: bolder;
+}
+.btn-search{
+    background-color: navy;
+    color: white;
+}
+select{
+    width: 100px;
+    height: 100%;
+    margin-right:5px;
+    border: 1px solid lightgray;
+}
+.search-input{
+    margin-right:5px;
+    width: 200px;
+    height: 28px;
+    padding: 0;
+    border: 1px solid lightgray;  
+}
+.upper-menu > select, button {
+    height: 100%;
+}
+.board-table {
+    font-size: 13px;
+    width: 100%;
+    border-top: 2px solid rgba(0, 0, 0, 1);
+    border-bottom: 2px solid rgba(0, 0, 0, 1);
+    border-collapse: collapse;
+    border-spacing: 0;
+    align-items: center;
+    table-layout: fixed; 
+}
+.board-table thead th {
+    text-align: center;
+    padding: 5px;
+    background-color: rgb(245, 243, 243);
+    font-size: 15px;
+}
+.board-table tbody td {
+    border-top: 1px solid #e7e7e7;
+    padding: 5px;
+    font-size: 12px; 
+}
+.board-table tbody td:not(.board-title){
+    text-align: center;
+}
+.board-title{
+   
+    width: 100%;
+    white-space: nowrap;
+    height: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+a{
+    text-decoration: none;
+    color: black;
+    height: 16px;
+}
+
+.button-container{
+    display: flex;
+    position: relative;
+    margin-top: 10px;
+}
+
+.btn-contents > button{
+    background-color: rgb(95, 95, 95);
+    color: white;
+    border: none;
+    font-size : 10px;
+    height: 30px;
+    width: 50px;
+}
+.btn-movepage{
+    
+    position: absolute;
+    right: 0;
+}
+.btn-movepage > button{
+    background-color: navy;
+    color: white;
+    height: 30px;
+}
+input::placeholder{
+    color: black;
+    padding: 5px;
+}
+.paging-container{
+    text-align: center;
+    width: 60%;
+    position: absolute;
+    left: 15%;
+}
+.paging{
+    list-style: none;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.firstPage{
+    font-size: 20px;
+}
+.paging a{
+    display: block;
+    margin: 0 3px;
+    border: 1px solid black;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    background-color:white;
+    font-size: 13px;
+    color: rgb(95, 95, 95);
+    text-decoration: none;
+}
+.paging a:hover{
+    background-color: rgb(95, 95, 95);
+    color: white;
+}

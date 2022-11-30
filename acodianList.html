@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/acodianList.css">
+</head>
+<body>
+    <div class="container">
+        <div class="question">
+            <div class="contents">
+                <div class="Q">Q</div>
+                <p class="question-title">타이틀입니다타이틀입니다타이틀입니다</p> 
+            </div>
+            <div class="arrow-container">
+                <div class="open">∧</div>
+                <div class="close">∨</div>
+            </div>
+        </div>
+        <div class="answer">
+            <div class="A">A</div>
+            <p> 안녕하십니까. 현행 개인정보취급방침을 아래와 같이 개정하여 공지합니다. 회원 여러분께서는 변경내용을 꼭 확인하시고
+                서비스 이용에 차질이 없으시기 바랍니다.</p>
+        </div>
+        <div class="question">
+            <div class="contents">
+                <div class="Q">Q</div>
+                <p class="question-title">타이틀입니다타이틀입니다타이틀입니다타이틀입니다타이틀입니다타이틀입니다타이틀입니다타이틀입니다타이틀입니다
+                타이틀입니다타이틀입니다타이틀입니다타이틀입니다타이틀입니다타이틀입니다타이틀입니다타이틀입니다타이틀입니다
+                </p>    
+            </div>
+            <div class="arrow-container">
+                <div class="open">∧</div>
+                <div class="close">∨</div>
+            </div>
+        </div>
+        <div class="answer">
+            <div class="A">A</div>
+            <p> 안녕하십니까. 현행 개인정보취급방침을 아래와 같이 개정하여 공지합니다. 회원 여러분께서는 변경내용을 꼭 확인하시고
+                서비스 이용에 차질이 없으시기 바랍니다.</p>
+        </div>
+    </div>
+</body>
+<script>
+    $('.open').click(function(){
+        let target = $(this).parent().parent().next();
+        target.slideDown(300);
+        $('.answer').not(target).slideUp(300);
+        $('.close').not(this).css('display','none');
+        $('.open').not(this).css('display','block');
+        $(this).css('display','none');
+        $(this).next().css('display','block');
+    })
+    $('.close').click(function(){
+        $(this).parent().parent().next().slideUp(300);
+        $(this).css('display','none');
+        $('.open').css('display','block');
+    })
+</script>
+</html>
