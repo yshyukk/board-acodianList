@@ -5,19 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/board.css">
-    <link rel="stylesheet" type="text/css" href="css/paging.css">
-   
 </head>
 <body>
     <div id="container">
         <div class="menu-container">
-            <div class="contents-counter">총<span class="count-num">10</span>건</div>
+            <div class="contents-counter">총<span class="count-num">51</span>건</div>
             <div class="upper-menu">
                 <select class="select">
                     <option>제목</option>
                 </select>
-                <input class="search-input" placeholder="검색어를 입력하세요">
+                <input class="search-input" placeholder="검색어를 입력하세요.">
                 <button class="btn-search">검색</button>
             </div>
         </div>
@@ -56,8 +55,8 @@
         </div>
         <div class="paging-container">
             <ul class="paging">
-                <li><a href="#" class="firstPage">&laquo;</a></li>
-                <li><a href="#" class="prev">&lt;</a></li>
+                <li><a href="#" class="firstPage"><<</a></li>
+                <li><a href="#" class="prev"><</a></li>
                 <li><a href="#" class="pageNum">11</a></li>
                 <li><a href="#" class="pageNum">12</a></li>
                 <li><a href="#" class="pageNum">13</a></li>
@@ -68,14 +67,14 @@
                 <li><a href="#" class="pageNum">18</a></li>
                 <li><a href="#" class="pageNum">19</a></li>
                 <li><a href="#" class="pageNum">20</a></li>
-                <li><a href="#" class="pageNum">&gt;</a></li>
-                <li><a href="#" class="lastPage">&raquo;</a></li>
+                <li><a href="#" class="pageNum">>></a></li>
+                <li><a href="#" class="lastPage">></a></li>
             </ul>
         </div>
     </div>
 </body>
 <script type="text/javascript">
-    let xhttp = new XMLHttpRequest();
+    /*let xhttp = new XMLHttpRequest();
     
     xhttp.onreadystatechange = function(){
         if(xhttp.readyState == 4 && xhttp.status == 200){
@@ -102,6 +101,8 @@
             let addCount = document.createTextNode(count);
             let addFileStatus = document.createTextNode(fileStatus);
 
+            
+
             let tr = document.createElement("tr");
             let td1= document.createElement("td");
             td1.className = 'board-number';
@@ -112,7 +113,10 @@
             let td4 = document.createElement("td");
             td4.className = 'board-count';
             let td5 = document.createElement("td");
-            td5.className = 'board-file';
+            //td5.className = 'board-file';
+            if(addFileStatus == 'Y'){
+                addFileStatus = "<td><img src='img/clip.png'>"
+            }
 
             td1.appendChild(addBoardNum);
             td2.appendChild(addTitle);
@@ -130,8 +134,31 @@
 
             tbody.appendChild(tr);
         }
-    }
-  
+    }*/
+    $(document).ready(function(){    
+    
+    let now = new Date();
+    console.log(now)
+    $.getJSON("json/contents.json", function(data){        
+
+        for(let i=0; i<data.length; i++){            
+            var row = "<tr>";
+            row +="<td class='board-number'>" + data[i].boardNum + "</td>";
+            row +="<td class='board-title'><a href='#'>" + data[i].title + "</a></td>";
+            row +="<td class='board-date'>" + data[i].writeDate + "</td>";
+            row +="<td class='board-count'>" + data[i].count + "</td>";    
+            if(data[i].fileStatus == 'Y'){
+                row +="<td class='board-file'><img class='clip' src='img/paper-clip.png'></td>";
+
+            } else {
+                row +="<td class='board-file'></td>"
+            }
+            row += "</tr>";
+
+            $("tbody").append(row);
+        }
+    });  
+});
 
    
 </script>

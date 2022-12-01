@@ -9,6 +9,7 @@
    display: flex;
    position: relative;
    height: 30px;
+   margin-bottom: 10px;
 }
 .upper-menu{
     display:flex;    
@@ -69,7 +70,6 @@ select{
     text-align: center;
 }
 .board-title{
-   
     width: 100%;
     white-space: nowrap;
     height: 10px;
@@ -79,7 +79,10 @@ select{
 a{
     text-decoration: none;
     color: black;
-    height: 16px;
+    text-align: center;
+}
+.new-img{
+    vertical-align: middle;
 }
 
 .button-container{
@@ -109,6 +112,9 @@ a{
 input::placeholder{
     color: black;
     padding: 5px;
+}
+.clip{
+    width: 1em;
 }
 .paging-container{
     text-align: center;
