@@ -73,72 +73,9 @@
         </div>
     </div>
 </body>
-<script type="text/javascript">
-    /*let xhttp = new XMLHttpRequest();
-    
-    xhttp.onreadystatechange = function(){
-        if(xhttp.readyState == 4 && xhttp.status == 200){
-            jsonFunction(xhttp.responseText);
-        }
-    }
-    xhttp.open("GET", "json/contents.json", true);
-    xhttp.send();
-
-    function jsonFunction(resp){
-        let dataArr = JSON.parse(resp);
-        let text = "";
-
-        for (i=0; i<dataArr.length; i++){
-            let boardNum = dataArr[i].boardNum;
-            let title = dataArr[i].title;
-            let writeDate = dataArr[i].writeDate;
-            let count = dataArr[i].count;
-            let fileStatus = dataArr[i].fileStatus;
-
-            let addBoardNum = document.createTextNode(boardNum);
-            let addTitle = document.createTextNode(title);
-            let addWirteDate = document.createTextNode(writeDate);
-            let addCount = document.createTextNode(count);
-            let addFileStatus = document.createTextNode(fileStatus);
-
-            
-
-            let tr = document.createElement("tr");
-            let td1= document.createElement("td");
-            td1.className = 'board-number';
-            let td2 = document.createElement("td");
-            td2.className = 'board-title';
-            let td3 = document.createElement("td");
-            td3.className = 'board-date';
-            let td4 = document.createElement("td");
-            td4.className = 'board-count';
-            let td5 = document.createElement("td");
-            //td5.className = 'board-file';
-            if(addFileStatus == 'Y'){
-                addFileStatus = "<td><img src='img/clip.png'>"
-            }
-
-            td1.appendChild(addBoardNum);
-            td2.appendChild(addTitle);
-            td3.appendChild(addWirteDate);
-            td4.appendChild(addCount);
-            td5.appendChild(addFileStatus);
-
-            tr.appendChild(td1);
-            tr.appendChild(td2);
-            tr.appendChild(td3);
-            tr.appendChild(td4);
-            tr.appendChild(td5);
-
-            let tbody = document.getElementsByTagName("tbody")[0];
-
-            tbody.appendChild(tr);
-        }
-    }*/
+<script>
     $(document).ready(function(){    
-    
-    let now = new Date();
-    console.log(now)
+
     $.getJSON("json/contents.json", function(data){        
 
         for(let i=0; i<data.length; i++){            
